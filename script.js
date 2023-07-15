@@ -100,26 +100,36 @@
 
 
 // alert(sum(10,12))
-let number = prompt('Enter the number')
-let number_versions = ['90','91','93','95','97','98','99','33','55','88','77','78','71']
-function uzbekCode(num) {
-    for(i = 0;i < number_versions.length; i++){
-        let code_part = num[4] + num[5]
-        if(code_part == number_versions[i]){
-            return true
-        }
-    }
-}
+// let number = prompt('Enter the number')
+// let number_versions = ['90','91','93','95','97','98','99','33','55','88','77','78','71']
+// function uzbekCode(num) {
+//     for(i = 0;i < number_versions.length; i++){
+//         let code_part = num[4] + num[5]
+//         if(code_part == number_versions[i]){
+//             return true
+//         }
+//     }
+// }
 
-function checkUzbNumber(uzb_num) {
-    let uzb_part = uzb_num[0] + uzb_num[1] + uzb_num[2] + uzb_num[3]
-    if(uzb_num.length == 13 && uzb_part == '+998' && uzbekCode(uzb_num) == true) {
-        alert(`+998 (${uzb_num[4] + uzb_num[5]}) ${uzb_num[6]+uzb_num[7]+uzb_num[8]}-${uzb_num[9]+uzb_num[10]}-${uzb_num[11]+uzb_num[12]}`)
-    } else {
-        alert('Something wrong')
+// function checkUzbNumber(uzb_num) {
+//     let uzb_part = uzb_num[0] + uzb_num[1] + uzb_num[2] + uzb_num[3]
+//     if(uzb_num.length == 13 && uzb_part == '+998' && uzbekCode(uzb_num) == true) {
+//         alert(`+998 (${uzb_num[4] + uzb_num[5]}) ${uzb_num[6]+uzb_num[7]+uzb_num[8]}-${uzb_num[9]+uzb_num[10]}-${uzb_num[11]+uzb_num[12]}`)
+//     } else {
+//         alert('Something wrong')
+//     }
+// }
+// checkUzbNumber(number)
+
+let buttons = document.querySelectorAll('.keyboardBtn')
+let keyboard = document.getElementById('keyboard')
+console.log(keyboard)
+
+for(let btn of buttons) {
+    btn.onclick = function typing() {
+        keyboard.textContent += btn.textContent
     }
 }
-checkUzbNumber(number)
 
 
 
